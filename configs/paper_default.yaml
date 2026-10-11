@@ -1,0 +1,67 @@
+search_space:
+  filters: [16, 32, 64, 128]
+  kernels: [3, 5, 7]
+  activations: [ReLU, LeakyReLU, ELU]
+  dropout_conv: [0.1, 0.2, 0.3, 0.4]
+  batch_norm_placement: [before, after, none]
+  depths: [2, 3, 4, 5, 6]
+  dense_units: [64, 128, 256, 512]
+  dropout_dense: [0.4, 0.5, 0.6]
+search:
+  population_size: 6
+  generations: 6
+  epochs_per_evaluation: 8
+  patience: 3
+  proxy_fraction: 0.1
+  batch_size: 64
+  learning_rate: 0.001
+  crossover_rate: 0.9
+  mutation_probability: 0.15
+  tournament_size: 3
+  elitism: 1
+  pso_inertia: 0.6
+  pso_cognitive: 1.5
+  pso_social: 1.5
+  archive_size: 12
+  divisions: 8
+  statistical_runs: 10
+  primary_seed: 106
+  nsga2_primary_seed: 109
+  repeated_seed_start: 100
+  nsga2_seed_start: 109
+training:
+  primary_epochs: 40
+  secondary_epochs: 10
+  eye_size: 48
+  cew_finetune_learning_rate: 0.0001
+transfer:
+  batch_size: 32
+  num_classes: 2
+  cew_split_seed: 42
+  cew_finetune_fraction: 0.8
+  model_names:
+    - MobileNetV2_1dense
+    - MobileNetV2_2dense
+    - ResNet50_1dense
+    - ResNet50_2dense
+    - VGG16_1dense
+    - VGG16_2dense
+  model_weight_folders:
+    MobileNetV2_1dense:
+      mrl_pretrained: MOBILENETV2_1dense_mrl_pretrained
+      cew_finetuned: null
+    MobileNetV2_2dense:
+      mrl_pretrained: MOBILENETV2_2dense_mrl_pretrained
+      cew_finetuned: null
+    ResNet50_1dense:
+      mrl_pretrained: RESNET50_1dense_mrl_pretrained
+      cew_finetuned: null
+    ResNet50_2dense:
+      mrl_pretrained: RESNET50_2dense_mrl_pretrained
+      cew_finetuned: null
+    VGG16_1dense:
+      mrl_pretrained: VGG16_1dense_seed102_mrl_pretrained
+      cew_finetuned: null
+    VGG16_2dense:
+      mrl_pretrained: VGG16_2dense_seed104_mrl_pretrained
+      cew_finetuned: null

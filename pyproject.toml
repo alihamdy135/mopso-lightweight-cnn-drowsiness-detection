@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mopso-lightweight-cnn-drowsiness-detection"
+version = "0.1.0"
+description = "Research code for multi-objective CNN architecture search and eye-state transfer baselines."
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "pandas",
+  "opencv-python-headless",
+  "matplotlib",
+  "scikit-learn",
+  "scipy",
+  "PyYAML",
+  "torch",
+  "torchvision",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

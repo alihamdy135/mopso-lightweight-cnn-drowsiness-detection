@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated manuscript."
+title: "Multi-Objective Particle Swarm Optimization for Lightweight CNN Architecture Search in Real-Time Driver Drowsiness Detection"
+type: software
+authors:
+  - family-names: Hasan
+    given-names: Anoureen
+  - family-names: Hamdi
+    given-names: Ali
+  - family-names: Gomaa
+    given-names: Ahmed
+  - family-names: Issa
+    given-names: Mohamed
